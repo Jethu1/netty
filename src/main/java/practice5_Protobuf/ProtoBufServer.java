@@ -1,8 +1,5 @@
 package practice5_Protobuf;
 
-/**
- * Created by jet on 2017/6/6.
- */
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -17,7 +14,7 @@ import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 
 public class ProtoBufServer {
-
+    
     public void bind(int port) throws Exception {
         // 配置服务端的NIO线程组
         EventLoopGroup bossGroup = new NioEventLoopGroup();
@@ -26,14 +23,13 @@ public class ProtoBufServer {
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class).option(ChannelOption.SO_BACKLOG, 100)
                     .handler(new LoggingHandler(LogLevel.INFO)).childHandler(new ChannelInitializer<SocketChannel>() {
-                @Override
-                public void initChannel(SocketChannel ch) {
-                    ch.pipeline().addLast(new ProtobufVarint32FrameDecoder());
-                    ch.pipeline().addLast(new ProtobufDecoder(RichManProto.RichMan.getDefaultInstance()));
-                    ch.pipeline().addLast(new ProtoBufServerHandler());
-                    System.out.println("server");
-                }
-            });
+                        @Override
+                        public void initChannel(SocketChannel ch) {
+                            ch.pipeline().addLast(new ProtobufVarint32FrameDecoder());
+                            ch.pipeline().addLast(new ProtobufDecoder(RichManProto.RichMan.getDefaultInstance()));
+                            ch.pipeline().addLast(new ProtoBufServerHandler());
+                        }
+                    });
 
             // 绑定端口，同步等待成功
             ChannelFuture f = b.bind(port).sync();

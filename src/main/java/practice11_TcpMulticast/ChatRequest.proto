@@ -1,0 +1,11 @@
+package message;
+option java_package = "practice11_TcpMulticast";
+option java_outer_classname = "ChatRequest";
+
+
+message Command {
+
+    optional int32 chatType = 1;
+
+    optional string content = 2;
+}

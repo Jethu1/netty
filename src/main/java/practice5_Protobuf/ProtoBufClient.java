@@ -1,8 +1,5 @@
 package practice5_Protobuf;
 
-/**
- * Created by jet on 2017/6/6.
- */
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -15,9 +12,8 @@ import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 
 public class ProtoBufClient {
-
+    
     public void connect(int port, String host) throws Exception {
-        // 配置客户端NIO线程组
         EventLoopGroup group = new NioEventLoopGroup();
         try {
             Bootstrap b = new Bootstrap();
@@ -31,13 +27,10 @@ public class ProtoBufClient {
                         }
                     });
 
-            // 发起异步连接操作
             ChannelFuture f = b.connect(host, port).sync();
 
-            // 当代客户端链路关闭
             f.channel().closeFuture().sync();
         } finally {
-            // 优雅退出，释放NIO线程组
             group.shutdownGracefully();
         }
     }

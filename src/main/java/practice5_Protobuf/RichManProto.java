@@ -8,75 +8,233 @@ public final class RichManProto {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
-  public interface RichManOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // required int32 id = 1;
+  public interface RichManOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:netty.RichMan)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required int32 id = 1;</code>
+     */
     boolean hasId();
+    /**
+     * <code>required int32 id = 1;</code>
+     */
     int getId();
-    
-    // required string name = 2;
+
+    /**
+     * <code>required string name = 2;</code>
+     */
     boolean hasName();
+    /**
+     * <code>required string name = 2;</code>
+     */
     String getName();
-    
-    // optional string email = 3;
+    /**
+     * <code>required string name = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>optional string email = 3;</code>
+     */
     boolean hasEmail();
+    /**
+     * <code>optional string email = 3;</code>
+     */
     String getEmail();
-    
-    // repeated .netty.RichMan.Car cars = 4;
-    java.util.List<RichMan.Car>
+    /**
+     * <code>optional string email = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getEmailBytes();
+
+    /**
+     * <code>repeated .netty.RichMan.Car cars = 4;</code>
+     */
+    java.util.List< RichMan.Car>
         getCarsList();
-    RichMan.Car getCars(int index);
+    /**
+     * <code>repeated .netty.RichMan.Car cars = 4;</code>
+     */
+     RichMan.Car getCars(int index);
+    /**
+     * <code>repeated .netty.RichMan.Car cars = 4;</code>
+     */
     int getCarsCount();
-    java.util.List<? extends RichMan.CarOrBuilder>
+    /**
+     * <code>repeated .netty.RichMan.Car cars = 4;</code>
+     */
+    java.util.List<? extends  RichMan.CarOrBuilder>
         getCarsOrBuilderList();
-    RichMan.CarOrBuilder getCarsOrBuilder(
-            int index);
+    /**
+     * <code>repeated .netty.RichMan.Car cars = 4;</code>
+     */
+     RichMan.CarOrBuilder getCarsOrBuilder(
+             int index);
   }
+  /**
+   * Protobuf type {@code netty.RichMan}
+   */
   public static final class RichMan extends
-      com.google.protobuf.GeneratedMessage
-      implements RichManOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:netty.RichMan)
+      RichManOrBuilder {
     // Use RichMan.newBuilder() to construct.
-    private RichMan(Builder builder) {
+    private RichMan(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private RichMan(boolean noInit) {}
-    
+    private RichMan(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final RichMan defaultInstance;
     public static RichMan getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public RichMan getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RichMan(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              name_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              email_ = bs;
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                cars_ = new java.util.ArrayList< Car>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              cars_.add(input.readMessage( Car.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          cars_ = java.util.Collections.unmodifiableList(cars_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return RichManProto.internal_static_netty_RichMan_descriptor;
+      return  RichManProto.internal_static_netty_RichMan_descriptor;
     }
-    
+
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return RichManProto.internal_static_netty_RichMan_fieldAccessorTable;
+      return  RichManProto.internal_static_netty_RichMan_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+               RichMan.class,  Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<RichMan> PARSER =
+        new com.google.protobuf.AbstractParser<RichMan>() {
+      public RichMan parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RichMan(input, extensionRegistry);
+      }
+    };
+
+    @Override
+    public com.google.protobuf.Parser<RichMan> getParserForType() {
+      return PARSER;
+    }
+
+    /**
+     * Protobuf enum {@code netty.RichMan.CarType}
+     */
     public enum CarType
         implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>AUDI = 0;</code>
+       */
       AUDI(0, 0),
+      /**
+       * <code>BENZ = 1;</code>
+       */
       BENZ(1, 1),
+      /**
+       * <code>LAMBORGHINI = 2;</code>
+       */
       LAMBORGHINI(2, 2),
+      /**
+       * <code>DASAUTO = 3;</code>
+       */
       DASAUTO(3, 3),
       ;
-      
+
+      /**
+       * <code>AUDI = 0;</code>
+       */
       public static final int AUDI_VALUE = 0;
+      /**
+       * <code>BENZ = 1;</code>
+       */
       public static final int BENZ_VALUE = 1;
+      /**
+       * <code>LAMBORGHINI = 2;</code>
+       */
       public static final int LAMBORGHINI_VALUE = 2;
+      /**
+       * <code>DASAUTO = 3;</code>
+       */
       public static final int DASAUTO_VALUE = 3;
-      
-      
+
+
       public final int getNumber() { return value; }
-      
+
       public static CarType valueOf(int value) {
         switch (value) {
           case 0: return AUDI;
@@ -86,7 +244,7 @@ public final class RichManProto {
           default: return null;
         }
       }
-      
+
       public static com.google.protobuf.Internal.EnumLiteMap<CarType>
           internalGetValueMap() {
         return internalValueMap;
@@ -98,7 +256,7 @@ public final class RichManProto {
                 return CarType.valueOf(number);
               }
             };
-      
+
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
         return getDescriptor().getValues().get(index);
@@ -109,13 +267,11 @@ public final class RichManProto {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return RichMan.getDescriptor().getEnumTypes().get(0);
+        return  RichMan.getDescriptor().getEnumTypes().get(0);
       }
-      
-      private static final CarType[] VALUES = {
-        AUDI, BENZ, LAMBORGHINI, DASAUTO, 
-      };
-      
+
+      private static final CarType[] VALUES = values();
+
       public static CarType valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
@@ -124,64 +280,165 @@ public final class RichManProto {
         }
         return VALUES[desc.getIndex()];
       }
-      
+
       private final int index;
       private final int value;
-      
+
       private CarType(int index, int value) {
         this.index = index;
         this.value = value;
       }
-      
+
       // @@protoc_insertion_point(enum_scope:netty.RichMan.CarType)
     }
-    
-    public interface CarOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
-      
-      // required string name = 1;
+
+    public interface CarOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:netty.RichMan.Car)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>required string name = 1;</code>
+       */
       boolean hasName();
+      /**
+       * <code>required string name = 1;</code>
+       */
       String getName();
-      
-      // optional .netty.RichMan.CarType type = 2 [default = BENZ];
+      /**
+       * <code>required string name = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getNameBytes();
+
+      /**
+       * <code>optional .netty.RichMan.CarType type = 2 [default = BENZ];</code>
+       */
       boolean hasType();
-      CarType getType();
+      /**
+       * <code>optional .netty.RichMan.CarType type = 2 [default = BENZ];</code>
+       */
+       CarType getType();
     }
+    /**
+     * Protobuf type {@code netty.RichMan.Car}
+     */
     public static final class Car extends
-        com.google.protobuf.GeneratedMessage
-        implements CarOrBuilder {
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:netty.RichMan.Car)
+        CarOrBuilder {
       // Use Car.newBuilder() to construct.
-      private Car(Builder builder) {
+      private Car(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
+        this.unknownFields = builder.getUnknownFields();
       }
-      private Car(boolean noInit) {}
-      
+      private Car(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
       private static final Car defaultInstance;
       public static Car getDefaultInstance() {
         return defaultInstance;
       }
-      
+
       public Car getDefaultInstanceForType() {
         return defaultInstance;
       }
-      
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Car(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000001;
+                name_ = bs;
+                break;
+              }
+              case 16: {
+                int rawValue = input.readEnum();
+                 CarType value =  CarType.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(2, rawValue);
+                } else {
+                  bitField0_ |= 0x00000002;
+                  type_ = value;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return RichManProto.internal_static_netty_RichMan_Car_descriptor;
+        return  RichManProto.internal_static_netty_RichMan_Car_descriptor;
       }
-      
+
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return RichManProto.internal_static_netty_RichMan_Car_fieldAccessorTable;
+        return  RichManProto.internal_static_netty_RichMan_Car_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                 Car.class,  Builder.class);
       }
-      
+
+      public static com.google.protobuf.Parser<Car> PARSER =
+          new com.google.protobuf.AbstractParser<Car>() {
+        public Car parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Car(input, extensionRegistry);
+        }
+      };
+
+      @Override
+      public com.google.protobuf.Parser<Car> getParserForType() {
+        return PARSER;
+      }
+
       private int bitField0_;
-      // required string name = 1;
       public static final int NAME_FIELD_NUMBER = 1;
       private Object name_;
+      /**
+       * <code>required string name = 1;</code>
+       */
       public boolean hasName() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+      /**
+       * <code>required string name = 1;</code>
+       */
       public String getName() {
         Object ref = name_;
         if (ref instanceof String) {
@@ -190,43 +447,54 @@ public final class RichManProto {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
           String s = bs.toStringUtf8();
-          if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          if (bs.isValidUtf8()) {
             name_ = s;
           }
           return s;
         }
       }
-      private com.google.protobuf.ByteString getNameBytes() {
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
         Object ref = name_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
           name_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-      
-      // optional .netty.RichMan.CarType type = 2 [default = BENZ];
+
       public static final int TYPE_FIELD_NUMBER = 2;
-      private CarType type_;
+      private  CarType type_;
+      /**
+       * <code>optional .netty.RichMan.CarType type = 2 [default = BENZ];</code>
+       */
       public boolean hasType() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      public CarType getType() {
+      /**
+       * <code>optional .netty.RichMan.CarType type = 2 [default = BENZ];</code>
+       */
+      public  CarType getType() {
         return type_;
       }
-      
+
       private void initFields() {
         name_ = "";
-        type_ = CarType.BENZ;
+        type_ =  CarType.BENZ;
       }
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
-        
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
         if (!hasName()) {
           memoizedIsInitialized = 0;
           return false;
@@ -234,7 +502,7 @@ public final class RichManProto {
         memoizedIsInitialized = 1;
         return true;
       }
-      
+
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         getSerializedSize();
@@ -246,12 +514,12 @@ public final class RichManProto {
         }
         getUnknownFields().writeTo(output);
       }
-      
+
       private int memoizedSerializedSize = -1;
       public int getSerializedSize() {
         int size = memoizedSerializedSize;
         if (size != -1) return size;
-      
+
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           size += com.google.protobuf.CodedOutputStream
@@ -265,113 +533,106 @@ public final class RichManProto {
         memoizedSerializedSize = size;
         return size;
       }
-      
+
       private static final long serialVersionUID = 0L;
       @Override
       protected Object writeReplace()
           throws java.io.ObjectStreamException {
         return super.writeReplace();
       }
-      
-      public static Car parseFrom(
+
+      public static  Car parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data).buildParsed();
+        return PARSER.parseFrom(data);
       }
-      public static Car parseFrom(
+      public static  Car parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data, extensionRegistry)
-                 .buildParsed();
+        return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static Car parseFrom(byte[] data)
+      public static  Car parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data).buildParsed();
+        return PARSER.parseFrom(data);
       }
-      public static Car parseFrom(
+      public static  Car parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data, extensionRegistry)
-                 .buildParsed();
+        return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static Car parseFrom(java.io.InputStream input)
+      public static  Car parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return newBuilder().mergeFrom(input).buildParsed();
+        return PARSER.parseFrom(input);
       }
-      public static Car parseFrom(
+      public static  Car parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return newBuilder().mergeFrom(input, extensionRegistry)
-                 .buildParsed();
+        return PARSER.parseFrom(input, extensionRegistry);
       }
-      public static Car parseDelimitedFrom(java.io.InputStream input)
+      public static  Car parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        Builder builder = newBuilder();
-        if (builder.mergeDelimitedFrom(input)) {
-          return builder.buildParsed();
-        } else {
-          return null;
-        }
+        return PARSER.parseDelimitedFrom(input);
       }
-      public static Car parseDelimitedFrom(
+      public static  Car parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        Builder builder = newBuilder();
-        if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-          return builder.buildParsed();
-        } else {
-          return null;
-        }
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
       }
-      public static Car parseFrom(
+      public static  Car parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return newBuilder().mergeFrom(input).buildParsed();
+        return PARSER.parseFrom(input);
       }
-      public static Car parseFrom(
+      public static  Car parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return newBuilder().mergeFrom(input, extensionRegistry)
-                 .buildParsed();
+        return PARSER.parseFrom(input, extensionRegistry);
       }
-      
+
       public static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(Car prototype) {
+      public static Builder newBuilder( Car prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
-      
+
       @Override
       protected Builder newBuilderForType(
           BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
+      /**
+       * Protobuf type {@code netty.RichMan.Car}
+       */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements CarOrBuilder {
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:netty.RichMan.Car)
+           CarOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return RichManProto.internal_static_netty_RichMan_Car_descriptor;
+          return  RichManProto.internal_static_netty_RichMan_Car_descriptor;
         }
-        
+
         protected FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return RichManProto.internal_static_netty_RichMan_Car_fieldAccessorTable;
+          return  RichManProto.internal_static_netty_RichMan_Car_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                   Car.class,  Builder.class);
         }
-        
-        // Construct using practice5_Protobuf.RichManProto.RichMan.Car.newBuilder()
+
+        // Construct using  practice5_Protobuf.RichManProto.RichMan.Car.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
-        
-        private Builder(BuilderParent parent) {
+
+        private Builder(
+            BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
@@ -382,49 +643,39 @@ public final class RichManProto {
         private static Builder create() {
           return new Builder();
         }
-        
+
         public Builder clear() {
           super.clear();
           name_ = "";
           bitField0_ = (bitField0_ & ~0x00000001);
-          type_ = CarType.BENZ;
+          type_ =  CarType.BENZ;
           bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
-        
+
         public Builder clone() {
           return create().mergeFrom(buildPartial());
         }
-        
+
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return Car.getDescriptor();
+          return  RichManProto.internal_static_netty_RichMan_Car_descriptor;
         }
-        
-        public Car getDefaultInstanceForType() {
-          return Car.getDefaultInstance();
+
+        public  Car getDefaultInstanceForType() {
+          return  Car.getDefaultInstance();
         }
-        
-        public Car build() {
-          Car result = buildPartial();
+
+        public  Car build() {
+           Car result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
           return result;
         }
-        
-        private Car buildParsed()
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Car result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(
-              result).asInvalidProtocolBufferException();
-          }
-          return result;
-        }
-        
-        public Car buildPartial() {
-          Car result = new Car(this);
+
+        public  Car buildPartial() {
+           Car result = new  Car(this);
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -439,20 +690,22 @@ public final class RichManProto {
           onBuilt();
           return result;
         }
-        
+
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof Car) {
-            return mergeFrom((Car)other);
+          if (other instanceof  Car) {
+            return mergeFrom(( Car)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
-        
-        public Builder mergeFrom(Car other) {
-          if (other == Car.getDefaultInstance()) return this;
+
+        public Builder mergeFrom( Car other) {
+          if (other ==  Car.getDefaultInstance()) return this;
           if (other.hasName()) {
-            setName(other.getName());
+            bitField0_ |= 0x00000001;
+            name_ = other.name_;
+            onChanged();
           }
           if (other.hasType()) {
             setType(other.getType());
@@ -460,7 +713,7 @@ public final class RichManProto {
           this.mergeUnknownFields(other.getUnknownFields());
           return this;
         }
-        
+
         public final boolean isInitialized() {
           if (!hasName()) {
             
@@ -468,68 +721,71 @@ public final class RichManProto {
           }
           return true;
         }
-        
+
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder(
-              this.getUnknownFields());
-          while (true) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  this.setUnknownFields(unknownFields.build());
-                  onChanged();
-                  return this;
-                }
-                break;
-              }
-              case 10: {
-                bitField0_ |= 0x00000001;
-                name_ = input.readBytes();
-                break;
-              }
-              case 16: {
-                int rawValue = input.readEnum();
-                CarType value = CarType.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(2, rawValue);
-                } else {
-                  bitField0_ |= 0x00000002;
-                  type_ = value;
-                }
-                break;
-              }
+           Car parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = ( Car) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
             }
           }
+          return this;
         }
-        
         private int bitField0_;
-        
-        // required string name = 1;
+
         private Object name_ = "";
+        /**
+         * <code>required string name = 1;</code>
+         */
         public boolean hasName() {
           return ((bitField0_ & 0x00000001) == 0x00000001);
         }
+        /**
+         * <code>required string name = 1;</code>
+         */
         public String getName() {
           Object ref = name_;
           if (!(ref instanceof String)) {
-            String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-            name_ = s;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              name_ = s;
+            }
             return s;
           } else {
             return (String) ref;
           }
         }
-        public Builder setName(String value) {
+        /**
+         * <code>required string name = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getNameBytes() {
+          Object ref = name_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (String) ref);
+            name_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>required string name = 1;</code>
+         */
+        public Builder setName(
+            String value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -538,27 +794,46 @@ public final class RichManProto {
           onChanged();
           return this;
         }
+        /**
+         * <code>required string name = 1;</code>
+         */
         public Builder clearName() {
           bitField0_ = (bitField0_ & ~0x00000001);
           name_ = getDefaultInstance().getName();
           onChanged();
           return this;
         }
-        void setName(com.google.protobuf.ByteString value) {
-          bitField0_ |= 0x00000001;
+        /**
+         * <code>required string name = 1;</code>
+         */
+        public Builder setNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
           name_ = value;
           onChanged();
+          return this;
         }
-        
-        // optional .netty.RichMan.CarType type = 2 [default = BENZ];
-        private CarType type_ = CarType.BENZ;
+
+        private  CarType type_ =  CarType.BENZ;
+        /**
+         * <code>optional .netty.RichMan.CarType type = 2 [default = BENZ];</code>
+         */
         public boolean hasType() {
           return ((bitField0_ & 0x00000002) == 0x00000002);
         }
-        public CarType getType() {
+        /**
+         * <code>optional .netty.RichMan.CarType type = 2 [default = BENZ];</code>
+         */
+        public  CarType getType() {
           return type_;
         }
-        public Builder setType(CarType value) {
+        /**
+         * <code>optional .netty.RichMan.CarType type = 2 [default = BENZ];</code>
+         */
+        public Builder setType( CarType value) {
           if (value == null) {
             throw new NullPointerException();
           }
@@ -567,41 +842,54 @@ public final class RichManProto {
           onChanged();
           return this;
         }
+        /**
+         * <code>optional .netty.RichMan.CarType type = 2 [default = BENZ];</code>
+         */
         public Builder clearType() {
           bitField0_ = (bitField0_ & ~0x00000002);
-          type_ = CarType.BENZ;
+          type_ =  CarType.BENZ;
           onChanged();
           return this;
         }
-        
+
         // @@protoc_insertion_point(builder_scope:netty.RichMan.Car)
       }
-      
+
       static {
         defaultInstance = new Car(true);
         defaultInstance.initFields();
       }
-      
+
       // @@protoc_insertion_point(class_scope:netty.RichMan.Car)
     }
-    
+
     private int bitField0_;
-    // required int32 id = 1;
     public static final int ID_FIELD_NUMBER = 1;
     private int id_;
+    /**
+     * <code>required int32 id = 1;</code>
+     */
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
+    /**
+     * <code>required int32 id = 1;</code>
+     */
     public int getId() {
       return id_;
     }
-    
-    // required string name = 2;
+
     public static final int NAME_FIELD_NUMBER = 2;
     private Object name_;
+    /**
+     * <code>required string name = 2;</code>
+     */
     public boolean hasName() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
+    /**
+     * <code>required string name = 2;</code>
+     */
     public String getName() {
       Object ref = name_;
       if (ref instanceof String) {
@@ -610,30 +898,40 @@ public final class RichManProto {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        if (bs.isValidUtf8()) {
           name_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getNameBytes() {
+    /**
+     * <code>required string name = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
       Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
         name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
-    // optional string email = 3;
+
     public static final int EMAIL_FIELD_NUMBER = 3;
     private Object email_;
+    /**
+     * <code>optional string email = 3;</code>
+     */
     public boolean hasEmail() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
+    /**
+     * <code>optional string email = 3;</code>
+     */
     public String getEmail() {
       Object ref = email_;
       if (ref instanceof String) {
@@ -642,45 +940,64 @@ public final class RichManProto {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        if (bs.isValidUtf8()) {
           email_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getEmailBytes() {
+    /**
+     * <code>optional string email = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
       Object ref = email_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
         email_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
-    // repeated .netty.RichMan.Car cars = 4;
+
     public static final int CARS_FIELD_NUMBER = 4;
-    private java.util.List<Car> cars_;
-    public java.util.List<Car> getCarsList() {
+    private java.util.List< Car> cars_;
+    /**
+     * <code>repeated .netty.RichMan.Car cars = 4;</code>
+     */
+    public java.util.List< Car> getCarsList() {
       return cars_;
     }
-    public java.util.List<? extends CarOrBuilder>
+    /**
+     * <code>repeated .netty.RichMan.Car cars = 4;</code>
+     */
+    public java.util.List<? extends  CarOrBuilder>
         getCarsOrBuilderList() {
       return cars_;
     }
+    /**
+     * <code>repeated .netty.RichMan.Car cars = 4;</code>
+     */
     public int getCarsCount() {
       return cars_.size();
     }
-    public Car getCars(int index) {
+    /**
+     * <code>repeated .netty.RichMan.Car cars = 4;</code>
+     */
+    public  Car getCars(int index) {
       return cars_.get(index);
     }
-    public CarOrBuilder getCarsOrBuilder(
+    /**
+     * <code>repeated .netty.RichMan.Car cars = 4;</code>
+     */
+    public  CarOrBuilder getCarsOrBuilder(
         int index) {
       return cars_.get(index);
     }
-    
+
     private void initFields() {
       id_ = 0;
       name_ = "";
@@ -690,8 +1007,9 @@ public final class RichManProto {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
       if (!hasId()) {
         memoizedIsInitialized = 0;
         return false;
@@ -709,7 +1027,7 @@ public final class RichManProto {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -727,12 +1045,12 @@ public final class RichManProto {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -754,113 +1072,106 @@ public final class RichManProto {
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
     @Override
     protected Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
-    public static RichMan parseFrom(
+
+    public static  RichMan parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
-    public static RichMan parseFrom(
+    public static  RichMan parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RichMan parseFrom(byte[] data)
+    public static  RichMan parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
-    public static RichMan parseFrom(
+    public static  RichMan parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RichMan parseFrom(java.io.InputStream input)
+    public static  RichMan parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
-    public static RichMan parseFrom(
+    public static  RichMan parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static RichMan parseDelimitedFrom(java.io.InputStream input)
+    public static  RichMan parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
-    public static RichMan parseDelimitedFrom(
+    public static  RichMan parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static RichMan parseFrom(
+    public static  RichMan parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
-    public static RichMan parseFrom(
+    public static  RichMan parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(RichMan prototype) {
+    public static Builder newBuilder( RichMan prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @Override
     protected Builder newBuilderForType(
         BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code netty.RichMan}
+     */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements RichManOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:netty.RichMan)
+         RichManOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return RichManProto.internal_static_netty_RichMan_descriptor;
+        return  RichManProto.internal_static_netty_RichMan_descriptor;
       }
-      
+
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return RichManProto.internal_static_netty_RichMan_fieldAccessorTable;
+        return  RichManProto.internal_static_netty_RichMan_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                 RichMan.class,  Builder.class);
       }
-      
-      // Construct using practice5_Protobuf.RichManProto.RichMan.newBuilder()
+
+      // Construct using  practice5_Protobuf.RichManProto.RichMan.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -872,7 +1183,7 @@ public final class RichManProto {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         id_ = 0;
@@ -889,40 +1200,30 @@ public final class RichManProto {
         }
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return RichMan.getDescriptor();
+        return  RichManProto.internal_static_netty_RichMan_descriptor;
       }
-      
-      public RichMan getDefaultInstanceForType() {
-        return RichMan.getDefaultInstance();
+
+      public  RichMan getDefaultInstanceForType() {
+        return  RichMan.getDefaultInstance();
       }
-      
-      public RichMan build() {
-        RichMan result = buildPartial();
+
+      public  RichMan build() {
+         RichMan result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
-      
-      private RichMan buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        RichMan result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public RichMan buildPartial() {
-        RichMan result = new RichMan(this);
+
+      public  RichMan buildPartial() {
+         RichMan result = new  RichMan(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -950,26 +1251,30 @@ public final class RichManProto {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof RichMan) {
-          return mergeFrom((RichMan)other);
+        if (other instanceof  RichMan) {
+          return mergeFrom(( RichMan)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
-      
-      public Builder mergeFrom(RichMan other) {
-        if (other == RichMan.getDefaultInstance()) return this;
+
+      public Builder mergeFrom( RichMan other) {
+        if (other ==  RichMan.getDefaultInstance()) return this;
         if (other.hasId()) {
           setId(other.getId());
         }
         if (other.hasName()) {
-          setName(other.getName());
+          bitField0_ |= 0x00000002;
+          name_ = other.name_;
+          onChanged();
         }
         if (other.hasEmail()) {
-          setEmail(other.getEmail());
+          bitField0_ |= 0x00000004;
+          email_ = other.email_;
+          onChanged();
         }
         if (carsBuilder_ == null) {
           if (!other.cars_.isEmpty()) {
@@ -1000,7 +1305,7 @@ public final class RichManProto {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         if (!hasId()) {
           
@@ -1018,94 +1323,103 @@ public final class RichManProto {
         }
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              id_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              name_ = input.readBytes();
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000004;
-              email_ = input.readBytes();
-              break;
-            }
-            case 34: {
-              Car.Builder subBuilder = Car.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addCars(subBuilder.buildPartial());
-              break;
-            }
+         RichMan parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = ( RichMan) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
-      // required int32 id = 1;
+
       private int id_ ;
+      /**
+       * <code>required int32 id = 1;</code>
+       */
       public boolean hasId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+      /**
+       * <code>required int32 id = 1;</code>
+       */
       public int getId() {
         return id_;
       }
+      /**
+       * <code>required int32 id = 1;</code>
+       */
       public Builder setId(int value) {
         bitField0_ |= 0x00000001;
         id_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>required int32 id = 1;</code>
+       */
       public Builder clearId() {
         bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
         onChanged();
         return this;
       }
-      
-      // required string name = 2;
+
       private Object name_ = "";
+      /**
+       * <code>required string name = 2;</code>
+       */
       public boolean hasName() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>required string name = 2;</code>
+       */
       public String getName() {
         Object ref = name_;
         if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          name_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
           return s;
         } else {
           return (String) ref;
         }
       }
-      public Builder setName(String value) {
+      /**
+       * <code>required string name = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string name = 2;</code>
+       */
+      public Builder setName(
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1114,34 +1428,74 @@ public final class RichManProto {
         onChanged();
         return this;
       }
+      /**
+       * <code>required string name = 2;</code>
+       */
       public Builder clearName() {
         bitField0_ = (bitField0_ & ~0x00000002);
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
-      void setName(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000002;
+      /**
+       * <code>required string name = 2;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         name_ = value;
         onChanged();
+        return this;
       }
-      
-      // optional string email = 3;
+
       private Object email_ = "";
+      /**
+       * <code>optional string email = 3;</code>
+       */
       public boolean hasEmail() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>optional string email = 3;</code>
+       */
       public String getEmail() {
         Object ref = email_;
         if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          email_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            email_ = s;
+          }
           return s;
         } else {
           return (String) ref;
         }
       }
-      public Builder setEmail(String value) {
+      /**
+       * <code>optional string email = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getEmailBytes() {
+        Object ref = email_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          email_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string email = 3;</code>
+       */
+      public Builder setEmail(
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1150,38 +1504,54 @@ public final class RichManProto {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string email = 3;</code>
+       */
       public Builder clearEmail() {
         bitField0_ = (bitField0_ & ~0x00000004);
         email_ = getDefaultInstance().getEmail();
         onChanged();
         return this;
       }
-      void setEmail(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000004;
+      /**
+       * <code>optional string email = 3;</code>
+       */
+      public Builder setEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
         email_ = value;
         onChanged();
+        return this;
       }
-      
-      // repeated .netty.RichMan.Car cars = 4;
-      private java.util.List<Car> cars_ =
+
+      private java.util.List< Car> cars_ =
         java.util.Collections.emptyList();
       private void ensureCarsIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          cars_ = new java.util.ArrayList<Car>(cars_);
+          cars_ = new java.util.ArrayList< Car>(cars_);
           bitField0_ |= 0x00000008;
          }
       }
-      
+
       private com.google.protobuf.RepeatedFieldBuilder<
-          Car, Car.Builder, CarOrBuilder> carsBuilder_;
-      
-      public java.util.List<Car> getCarsList() {
+           Car,  Car.Builder,  CarOrBuilder> carsBuilder_;
+
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
+      public java.util.List< Car> getCarsList() {
         if (carsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(cars_);
         } else {
           return carsBuilder_.getMessageList();
         }
       }
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
       public int getCarsCount() {
         if (carsBuilder_ == null) {
           return cars_.size();
@@ -1189,15 +1559,21 @@ public final class RichManProto {
           return carsBuilder_.getCount();
         }
       }
-      public Car getCars(int index) {
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
+      public  Car getCars(int index) {
         if (carsBuilder_ == null) {
           return cars_.get(index);
         } else {
           return carsBuilder_.getMessage(index);
         }
       }
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
       public Builder setCars(
-          int index, Car value) {
+          int index,  Car value) {
         if (carsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1210,8 +1586,11 @@ public final class RichManProto {
         }
         return this;
       }
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
       public Builder setCars(
-          int index, Car.Builder builderForValue) {
+          int index,  Car.Builder builderForValue) {
         if (carsBuilder_ == null) {
           ensureCarsIsMutable();
           cars_.set(index, builderForValue.build());
@@ -1221,7 +1600,10 @@ public final class RichManProto {
         }
         return this;
       }
-      public Builder addCars(Car value) {
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
+      public Builder addCars( Car value) {
         if (carsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1234,8 +1616,11 @@ public final class RichManProto {
         }
         return this;
       }
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
       public Builder addCars(
-          int index, Car value) {
+          int index,  Car value) {
         if (carsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1248,8 +1633,11 @@ public final class RichManProto {
         }
         return this;
       }
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
       public Builder addCars(
-          Car.Builder builderForValue) {
+           Car.Builder builderForValue) {
         if (carsBuilder_ == null) {
           ensureCarsIsMutable();
           cars_.add(builderForValue.build());
@@ -1259,8 +1647,11 @@ public final class RichManProto {
         }
         return this;
       }
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
       public Builder addCars(
-          int index, Car.Builder builderForValue) {
+          int index,  Car.Builder builderForValue) {
         if (carsBuilder_ == null) {
           ensureCarsIsMutable();
           cars_.add(index, builderForValue.build());
@@ -1270,17 +1661,24 @@ public final class RichManProto {
         }
         return this;
       }
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
       public Builder addAllCars(
-          Iterable<? extends Car> values) {
+          Iterable<? extends  Car> values) {
         if (carsBuilder_ == null) {
           ensureCarsIsMutable();
-          super.addAll(values, cars_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, cars_);
           onChanged();
         } else {
           carsBuilder_.addAllMessages(values);
         }
         return this;
       }
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
       public Builder clearCars() {
         if (carsBuilder_ == null) {
           cars_ = java.util.Collections.emptyList();
@@ -1291,6 +1689,9 @@ public final class RichManProto {
         }
         return this;
       }
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
       public Builder removeCars(int index) {
         if (carsBuilder_ == null) {
           ensureCarsIsMutable();
@@ -1301,18 +1702,27 @@ public final class RichManProto {
         }
         return this;
       }
-      public Car.Builder getCarsBuilder(
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
+      public  Car.Builder getCarsBuilder(
           int index) {
         return getCarsFieldBuilder().getBuilder(index);
       }
-      public CarOrBuilder getCarsOrBuilder(
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
+      public  CarOrBuilder getCarsOrBuilder(
           int index) {
         if (carsBuilder_ == null) {
           return cars_.get(index);  } else {
           return carsBuilder_.getMessageOrBuilder(index);
         }
       }
-      public java.util.List<? extends CarOrBuilder>
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
+      public java.util.List<? extends  CarOrBuilder>
            getCarsOrBuilderList() {
         if (carsBuilder_ != null) {
           return carsBuilder_.getMessageOrBuilderList();
@@ -1320,25 +1730,34 @@ public final class RichManProto {
           return java.util.Collections.unmodifiableList(cars_);
         }
       }
-      public Car.Builder addCarsBuilder() {
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
+      public  Car.Builder addCarsBuilder() {
         return getCarsFieldBuilder().addBuilder(
-            Car.getDefaultInstance());
+             Car.getDefaultInstance());
       }
-      public Car.Builder addCarsBuilder(
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
+      public  Car.Builder addCarsBuilder(
           int index) {
         return getCarsFieldBuilder().addBuilder(
-            index, Car.getDefaultInstance());
+            index,  Car.getDefaultInstance());
       }
-      public java.util.List<Car.Builder>
+      /**
+       * <code>repeated .netty.RichMan.Car cars = 4;</code>
+       */
+      public java.util.List< Car.Builder>
            getCarsBuilderList() {
         return getCarsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          Car, Car.Builder, CarOrBuilder>
+           Car,  Car.Builder,  CarOrBuilder>
           getCarsFieldBuilder() {
         if (carsBuilder_ == null) {
           carsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              Car, Car.Builder, CarOrBuilder>(
+               Car,  Car.Builder,  CarOrBuilder>(
                   cars_,
                   ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
@@ -1347,29 +1766,29 @@ public final class RichManProto {
         }
         return carsBuilder_;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:netty.RichMan)
     }
-    
+
     static {
       defaultInstance = new RichMan(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:netty.RichMan)
   }
-  
-  private static com.google.protobuf.Descriptors.Descriptor
+
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_netty_RichMan_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_netty_RichMan_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_netty_RichMan_Car_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_netty_RichMan_Car_fieldAccessorTable;
-  
+
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
@@ -1383,38 +1802,34 @@ public final class RichManProto {
       "ars\030\004 \003(\0132\022.netty.RichMan.Car\032?\n\003Car\022\014\n\004" +
       "name\030\001 \002(\t\022*\n\004type\030\002 \001(\0162\026.netty.RichMan" +
       ".CarType:\004BENZ\";\n\007CarType\022\010\n\004AUDI\020\000\022\010\n\004B" +
-      "ENZ\020\001\022\017\n\013LAMBORGHINI\020\002\022\013\n\007DASAUTO\020\003B\"\n\022p" +
-      "ractice5_ProtobufB\014RichManProto"
+      "ENZ\020\001\022\017\n\013LAMBORGHINI\020\002\022\013\n\007DASAUTO\020\003B#\n\023 " +
+      "practice5_ProtobufB\014RichManProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-        public com.google.protobuf.ExtensionRegistry assignDescriptors(
-            com.google.protobuf.Descriptors.FileDescriptor root) {
-          descriptor = root;
-          internal_static_netty_RichMan_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-          internal_static_netty_RichMan_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_netty_RichMan_descriptor,
-              new String[] { "Id", "Name", "Email", "Cars", },
-              RichMan.class,
-              RichMan.Builder.class);
-          internal_static_netty_RichMan_Car_descriptor =
-            internal_static_netty_RichMan_descriptor.getNestedTypes().get(0);
-          internal_static_netty_RichMan_Car_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_netty_RichMan_Car_descriptor,
-              new String[] { "Name", "Type", },
-              RichMan.Car.class,
-              RichMan.Car.Builder.class);
-          return null;
-        }
-      };
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
+    internal_static_netty_RichMan_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_netty_RichMan_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_netty_RichMan_descriptor,
+        new String[] { "Id", "Name", "Email", "Cars", });
+    internal_static_netty_RichMan_Car_descriptor =
+      internal_static_netty_RichMan_descriptor.getNestedTypes().get(0);
+    internal_static_netty_RichMan_Car_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_netty_RichMan_Car_descriptor,
+        new String[] { "Name", "Type", });
   }
-  
+
   // @@protoc_insertion_point(outer_class_scope)
 }
